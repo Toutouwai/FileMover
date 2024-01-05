@@ -1,0 +1,39 @@
+// Container for buttons and hidden input
+.fm-markup {
+	& + ul { margin-top:0; }
+}
+
+// Header icon to show buttons
+.fm-show-buttons { position:relative; margin-left:5px; z-index:10; color:#3eb998; display:none !important;
+	&:hover { color:#e83561; }
+}
+.fm-buttons { display:none; margin:-5px; flex-wrap:wrap;
+	button { margin:5px !important; }
+}
+.InputfieldHeader:not(.InputfieldStateCollapsed .InputfieldHeader) {
+	&:hover {
+		.fm-show-buttons { display:inline-block !important; }
+	}
+}
+.buttons-visible {
+	.fm-show-buttons { display:inline-block !important; }
+	.fm-buttons { display:flex; padding-bottom:15px; }
+}
+
+// Select active
+.fm-select-active {
+	.gridImage__inner { display:none; }
+}
+
+// Select item
+.fm-select-item { position:absolute; left:0; right:0; top:0; bottom:0; z-index:999; cursor:pointer;
+	&:hover { background-color:rgba(0,0,0,0.3); }
+	&.fm-selected { background-color:rgba(0,0,0,0.6);
+		&:after { content:"\f058"; font:normal normal normal 14px/1 FontAwesome; color:white; font-size:24px; position:absolute; z-index:3; left:50%; top:50%; transform:translate(-50%, -50%); pointer-events:none; }
+	}
+	// Images
+	.gridImages & { left:0.4em; right:0.4em; top:0.4em; bottom:0.4em; }
+}
+
+// Custom class for Uikit tooltip
+.fm-nowrap { white-space:nowrap; max-width:none !important; }
