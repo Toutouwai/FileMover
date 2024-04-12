@@ -161,6 +161,7 @@ EOT;
 			// Add the item to the field
 			$new_pagefile = clone $pagefile;
 			$pagefiles->add($new_pagefile);
+			// Call install() due to this issue: https://github.com/processwire/processwire-issues/issues/1863
 			$new_pagefile->install($new_pagefile->filename);
 
 			// Decrement remaining uploads
