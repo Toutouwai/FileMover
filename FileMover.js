@@ -17,6 +17,9 @@ $(document).ready(function() {
 		$('.fm-buttons').html('');
 	}
 
+	// Add internal style for select label (so that it is translatable in the module file)
+	$('head').append('<style>.fm-select-item:hover:after { content:"' + labels.select_item + '" }</style>');
+
 	// Show buttons icon clicked
 	$(document).on('click', '.fm-show-buttons', function(event) {
 		event.preventDefault();

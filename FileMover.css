@@ -39,10 +39,17 @@
   cursor: pointer; }
   .fm-select-item:hover {
     background-color: rgba(0, 0, 0, 0.3); }
+    .fm-select-item:hover:after {
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
   .fm-select-item.fm-selected {
     background-color: rgba(0, 0, 0, 0.6); }
     .fm-select-item.fm-selected:after {
-      content: "\f058";
+      content: "\f058" !important;
       font: normal normal normal 14px/1 FontAwesome;
       color: white;
       font-size: 24px;

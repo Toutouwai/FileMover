@@ -59,6 +59,7 @@ class FileMover extends WireData implements Module, ConfigurableModule {
 		$data = [
 			'labels' => [
 				'select' => $this->_('Select items to later move or copy'),
+				'select_item' => $this->_('Select'),
 				'copy' => $this->_('Copy {n} selected {noun} to this field + save page'),
 				'move' => $this->_('Move {n} selected {noun} to this field + save page'),
 				'clear' => $this->_('Clear {n} selected {noun}'),
