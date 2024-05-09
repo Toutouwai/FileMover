@@ -25,7 +25,7 @@ class FileMover extends WireData implements Module, ConfigurableModule {
 		$inputfield = $event->object;
 		// Return early if this inputfield has already been prepped
 		if($inputfield->fm_prepped) return;
-		
+
 		// Return early if role is now allowed
 		$enable = false;
 		if(!$this->allowed_roles || $this->user->isSuperuser()) {
@@ -72,6 +72,7 @@ class FileMover extends WireData implements Module, ConfigurableModule {
 		$config->js($this->className, $data);
 
 		// Add custom markup
+		$inputfield->entityEncodeLabel = false;
 		$label = $this->_('Show/hide File Mover buttons');
 		$inputfield->label .= <<<EOT
 <i class="fa fa-fw fa-arrow-circle-right fm-show-buttons" uk-tooltip="title: $label; pos: bottom-left; delay: 800"></i>
@@ -166,7 +167,7 @@ EOT;
 
 			// Decrement remaining uploads
 			--$remaining_uploads;
-			
+
 			// Information needed to complete "move" action 
 			$processed[] = $pagefile;
 			// Files moved within the same page will be renamed

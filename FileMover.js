@@ -39,10 +39,10 @@ $(document).ready(function() {
 			$inputfield_wrap.addClass('buttons-visible');
 			// Populate the buttons wrapper
 			let items = localStorage.getItem(storage_key);
+			items = JSON.parse(items);
 			let html = '';
 			// Some items are already selected
-			if(items) {
-				items = JSON.parse(items);
+			if(items && items.length) {
 				let label = getContextualLabel(labels.move, items.length);
 				html += `<button type="button" class="ui-button" data-fm-type="move"><i class="fa fa-fw fa-arrow-circle-right"></i> ${label}</button>`;
 				label = getContextualLabel(labels.copy, items.length);
@@ -73,6 +73,7 @@ $(document).ready(function() {
 
 			case 'select':
 				cancelSelect();
+				$inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('disable');
 				$inputfield_wrap.addClass('fm-select-active');
 				$inputfield_wrap.find('.InputfieldImageList li, .InputfieldFileList li').prepend('<div class="fm-select-item"></div>');
 				let html = '';
@@ -82,6 +83,7 @@ $(document).ready(function() {
 				break;
 
 			case 'select-done':
+				$inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('enable');
 				const $selected = $inputfield_wrap.find('.fm-selected');
 				items = [];
 				$selected.each(function() {
