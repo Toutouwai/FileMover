@@ -12,10 +12,10 @@ For convenience in the screencast this demonstration shows moving and copying im
 
 1. In any Images or Files field, hover on the field label to show the File Mover icon. Clicking on the icon will reveal the File Mover buttons.
 2. If no items are yet selected you'll see a button labelled "Select items to later move or copy". Click the button to enter selection mode.
-3. While in selection mode, click one or more images/files to select them. When you have finished selecting items click the "Done" button.
+3. While in selection mode, click one or more images/files to select them. When you have finished selecting items click the "Done" button. Note: you can only select from one Images and one Files field at a time before completing the move/copy step.
 4. In the Images or Files field that you want to move/copy the items to, hover the label to show the File Mover icon and click it to reveal the File Mover buttons.
 5. When you click the Move or Copy button the page will automatically be saved and the selected items will be moved or copied accordingly. There is also a button to clear the current selection if needed. If you hover on any of the buttons a tooltip shows the filenames of the currently selected items, in case you need a reminder.
 
-## Notes
+## Configuration
 
-You can only select from one Images and one Files field at a time.
+There is a field in the module config that defines which roles are allowed to use the File Mover module. If the field is left empty then all roles are allowed.
