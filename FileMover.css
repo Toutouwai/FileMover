@@ -1,5 +1,7 @@
 .fm-markup + ul {
   margin-top: 0; }
+.fm-markup + p {
+  margin-top: 0; }
 
 .fm-show-buttons {
   position: relative;

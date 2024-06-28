@@ -1,6 +1,7 @@
 // Container for buttons and hidden input
 .fm-markup {
 	& + ul { margin-top:0; }
+	& + p { margin-top:0; }
 }
 
 // Header icon to show buttons

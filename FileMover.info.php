@@ -3,7 +3,7 @@
 $info = array(
 	'title' => 'File Mover',
 	'summary' => 'Allows the selection of files or images for moving or copying to a different field.',
-	'version' => '0.1.0',
+	'version' => '0.1.1',
 	'author' => 'Robin Sallis',
 	'href' => 'https://github.com/Toutouwai/FileMover',
 	'icon' => 'arrow-circle-right',
