@@ -66,6 +66,7 @@ $(document).ready(function() {
 		const $buttons_wrap = $inputfield_wrap.find('.fm-buttons');
 		const fieldtype = $inputfield_wrap.hasClass('InputfieldImage') ? 'images' : 'files';
 		const storage_key = 'fa_items_' + fieldtype;
+		const is_sortable = $inputfield_wrap.find('.ui-sortable').length;
 		let items = null;
 
 		// Do different things depending on the button type
@@ -73,7 +74,7 @@ $(document).ready(function() {
 
 			case 'select':
 				cancelSelect();
-				$inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('disable');
+				if(is_sortable) $inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('disable');
 				$inputfield_wrap.addClass('fm-select-active');
 				$inputfield_wrap.find('.InputfieldImageList li, .InputfieldFileList li').prepend('<div class="fm-select-item"></div>');
 				let html = '';
@@ -83,7 +84,7 @@ $(document).ready(function() {
 				break;
 
 			case 'select-done':
-				$inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('enable');
+				if(is_sortable)$inputfield_wrap.find('.InputfieldFileList, .gridImages').sortable('enable');
 				const $selected = $inputfield_wrap.find('.fm-selected');
 				items = [];
 				$selected.each(function() {
